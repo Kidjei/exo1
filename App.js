@@ -1,21 +1,30 @@
 import React from 'react';
-import StudentTable from './StudentTable'
 
-const App = () => {
-  const students = [
-    // Your student data here
-  ];
+const UniqueElementsApp = () => {
+  const findUniqueElements = (inputArray) => {
+    // Use Set to store unique elements
+    const uniqueSet = new Set(inputArray);
+
+    // Convert Set back to array
+    const uniqueArray = Array.from(uniqueSet);
+
+    return uniqueArray;
+  };
+
+  const exampleArray = [1, 2, 3, 4, 2, 3, 5, 6, 1];
+
+  const uniqueArray = findUniqueElements(exampleArray);
 
   return (
     <div>
-      <h1>Student Data</h1>
-      <StudentTable students={students} />
+      <h1>Unique Elements App</h1>
+      <p>Original Array: {JSON.stringify(exampleArray)}</p>
+      <p>Unique Elements: {JSON.stringify(uniqueArray)}</p>
     </div>
   );
 };
 
-export default App;
-
+export default UniqueElementsApp;
 
 
 
